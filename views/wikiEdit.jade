@@ -1,0 +1,6 @@
+form(method='post',action='/wiki/#{_id}')
+  input(name='title',value='#{title}')
+  textarea(name='content')
+    #{content}
+  input(type='submit',value='Save')
+  input(type='reset',value='Reset')
