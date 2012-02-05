@@ -1,6 +1,6 @@
 #CCCP
 
-A *C*orporate *C*oordination and *C*ommunication *P*ortal
+A **C**orporate **C**oordination and **C**ommunication **P**ortal
 
 (c) 2012 Traian Nedelea
 
