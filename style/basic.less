@@ -1,0 +1,104 @@
+@import 'colors.less';
+
+html, body {
+    background-color: @background;
+    margin: 0;
+    padding: 0;
+}
+
+.font (@color: white) {
+    color: @color;
+    font: normal 100% Verdana,Helvetica,Arial,sans-serif,serif,monospace;
+}
+
+a {
+    .font(@primary-4);
+    padding: 2px;
+    position: relative;
+}
+
+.external-arrow(@color, @size: 0.3em) {
+    content: '';
+    border: @size solid @color;
+    border-left: @size solid transparent;
+    border-bottom: @size solid transparent;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0em;
+    height: 0em;
+}
+
+.gradient(@color1,@color2) {
+    background-color: @color1;
+    background-image: -moz-linear-gradient(top , @color1, @color2 100.0%);
+    background-image: -webkit-linear-gradient(top , @color1, @color2 100.0%);
+    background-image: -o-linear-gradient(top , @color1, @color2 100.0%);
+    background-image: -ms-linear-gradient(top , @color1, @color2 100.0%);
+    background-image: linear-gradient(top , @color1, @color2 100.0%);
+}
+
+a[href^='http'] {
+    padding-right: 0.6em;
+}
+a[href^='http']:after, a[href^='http']:visited:after {
+    .external-arrow(@primary-4);
+}
+a[href^='http']:hover:after, a[href^='http']:active:after {
+    .external-arrow(@primary);
+}
+
+a:hover, a:active {
+    .font(@primary);
+    background-color: @primary-4;
+}
+
+a:visited {
+    .font(@primary);
+}
+
+div, span, p, li {
+    .font;
+}
+
+p, li {
+    line-height: 150%;
+}
+
+div {
+    padding: 1em;
+}
+
+h1,h2,h3 {
+    .font(@tertiary);
+    font-weight: normal;
+}
+
+h4,h5,h6 {
+    .font(white);
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 120%;
+}
+
+h2 {
+    font-size: 110%;
+}
+
+h3 {
+    font-size: 100%;
+}
+
+h4 {
+    font-size: 110%;
+}
+
+h5 {
+    font-size: 105%;
+}
+
+h6 {
+    font-size: 100%;
+}

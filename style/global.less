@@ -1,0 +1,111 @@
+@import 'colors.less';
+@import 'basic.less';
+
+#header-background {
+    background-color: @primary-2;
+    margin: 0;
+    padding: 1em 2em 0 2em;
+    position: relative;
+    z-index: 1000;
+    box-shadow: 0 0 1em 0.1em black;
+}
+
+#header {
+    background-color: @primary;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    padding-bottom: 0;
+    box-shadow: 0 0 0.5em 0 black;
+
+    h1 {
+        color: white;
+        margin: 0;
+        padding: 0;
+        font-size: 120%;
+        font-weight: bold;
+    }
+
+    h2 {
+        color: white;
+        margin: 0;
+        padding: 0;
+        font-size: 60%;
+    }
+}
+
+.navigation(@count: 1) {
+    padding: 0;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+
+        li {
+            display: inline-block;
+            width: 100%/@count;
+
+            a,a:visited {
+                color: @secondary-2;
+                background-color: @secondary;
+                margin-left: 2px;
+                display: block;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            a[href^='http']:after, a[href^='http']:visited:after {
+                .external-arrow(@secondary-2);
+            }
+            a:hover,a:active {
+                color: @secondary;
+                background-color: @secondary-2;
+            }
+            a[href^='http']:hover:after, a[href^='http']:active:after {
+                .external-arrow(@secondary);
+            }
+        }
+        li:first-child > a {
+            margin-left: 0;
+        }
+    }
+}
+
+#top-nav {
+    margin: 1em -1em 0 -1em;
+    border: 0;
+    border-top: 2px solid @primary-2;
+    background-color: @primary-2;
+    .navigation(5);
+}
+
+#body {
+    margin: 2px 2em 2em 2em;
+    background-color: @primary-2;
+    box-shadow: 0 0 0.5em 0 black;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+
+    .title {
+        border-bottom: 1px dotted white;
+        color: white;
+        font-weight: bold;
+    }
+
+    #bottom-nav {
+        border: 0;
+        border-top: 2px solid @background;
+        border-bottom: 2px solid @background;
+        background-color: @background;
+        margin: 1em -1em 0 -1em;
+        .navigation(3);
+    }
+
+    #footer {
+        background-color: @primary-2;
+        margin: 1em 2em 0 2em;
+        padding: 0.5em 1em 0.5em 1em;
+        color: white;
+        text-align: center;
+        font-size: 70%;
+    }
+}

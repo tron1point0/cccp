@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="no"?>
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512" height="512">
+<defs>
+    <filter id="drop-shadow" filterUnits="userSpaceOnUse">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur" />
+        <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+        </feMerge>
+    </filter>
+</defs>
+
+<g filter="url(#drop-shadow)">
+    <g transform="scale(25.6,25.6) translate(10,10)">
+        <path d="M0,-6 A6,6 0 1,0 0,6 L0,-6z" fill="black" />
+        <path d="M0,-6 A6,6 0 0,1 0,6 L0,-6z" fill="#578bff" />
+        <path d="M0,-9 A7,9 0 0,0 0,9 A9,9 0 0,1 0,-9z" />
+    </g>
+</g>
+</svg>

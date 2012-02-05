@@ -5,8 +5,32 @@ html
     script(src='/script/global.js',type='text/javascript')
     link(rel='stylesheet',type='text/css',href='/style/global.css')
   body
-    #header
-      Test header
-    !{body}
-    #footer
-      Test footer
+    #header-background
+      #header
+        h1 The Praxis Initiative
+        unless (typeof user == 'undefined')
+          #top-nav
+            ul
+              li
+                a(href='#') Home
+              li
+                a(href='#') Abacus
+              li
+                a(href='#') Wiki
+              li
+                a(href='#') Forum
+              li
+                a(href='http://gets.eve-kill.com/') Killboard
+    #body
+      !{body}
+      unless (typeof user == 'undefined')
+        #bottom-nav
+          ul
+            li
+              a(href='#') Manage Roles
+            li
+              a(href='#') Manage Groups
+            li
+              a(href='#') Site Admin
+      #footer
+        | Copyright &copy; 2012, Traian Nedelea &lt;tron1point0@gmail.com&gt;

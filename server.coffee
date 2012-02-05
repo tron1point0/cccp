@@ -1,37 +1,60 @@
 express = require 'express'
 cradle = require 'cradle'
-md = require('node-markdown').Markdown
-db = new(cradle.Connection)().database 'sliderule'
-app = express.createServer()
+markdown = require 'markdown'
 
-app.use express.static __dirname + '/static'
-app.use express.bodyParser()
+db = new(cradle.Connection)().database 'sliderule'
+app = express.createServer(
+    express.logger(),
+    express.static(__dirname + '/static'),
+    express.bodyParser(),
+    express.cookieParser(),
+    express.session(secret: 'foo')
+)
+
 app.set 'view engine', 'jade'
 
-showPage = (page,res) ->
+md = (str) -> markdown.markdown.toHTML(str)
+
+wikiPage = (page,cb,errcb) ->
     db.get page, (err,doc) ->
         if err
-            res.render 'error',
-                content: err
-                title: 'Oops.'
+            if errcb
+                errcb(err)
+            else
+                if typeof cb == 'function'
+                    cb(err)
+                else
+                    console.log err
         else
-            doc.content = md doc.content
-            res.render 'wiki', doc
+            if typeof cb == 'function'
+                cb(doc)
+            else
+                doc.content = md doc.content
+                cb.render 'wiki', doc
 
 app.get '/', (req,res) ->
-    showPage 'start',res
+    if req.session.user
+        wikiPage 'start', res
+    else
+        wikiPage 'info', (doc) ->
+            doc.layout = 'layout-form'
+            res.render 'info', doc
+
+app.get '/login', (req,res) ->
+    res.render 'login'
+
+app.get '/more', (req,res) ->
+    wikiPage 'more', (doc) ->
+        doc.layout = 'layout-form'
+        doc.content = md doc.content
+        res.render 'more', doc
 
 app.get '/wiki/:slug', (req,res) ->
-    showPage req.params.slug,res
+    wikiPage req.params.slug, res
 
 app.get '/wiki/:slug/edit', (req,res) ->
-    db.get req.params.slug, (err,doc) ->
-        if err
-            res.render 'error'
-                content: err
-                title: 'Oops.'
-        else
-            res.render 'wikiEdit', doc
+    wikiPage req.params.slug, (doc) ->
+        res.render 'wikiEdit', doc
 
 app.post '/wiki/:slug', (req,res) ->
     db.save req.params.slug, {

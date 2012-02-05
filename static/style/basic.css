@@ -1,0 +1,18 @@
+html,body{background-color:#101010;margin:0;padding:0;}
+a{color:#4a637d;font:normal 100% Verdana,Helvetica,Arial,sans-serif,serif,monospace;padding:2px;position:relative;}
+a[href^='http']{padding-right:0.6em;}
+a[href^='http']:after,a[href^='http']:visited:after{content:'';border:0.3em solid #4a637d;border-left:0.3em solid transparent;border-bottom:0.3em solid transparent;position:absolute;right:0;top:0;width:0em;height:0em;}
+a[href^='http']:hover:after,a[href^='http']:active:after{content:'';border:0.3em solid #2b425a;border-left:0.3em solid transparent;border-bottom:0.3em solid transparent;position:absolute;right:0;top:0;width:0em;height:0em;}
+a:hover,a:active{color:#2b425a;font:normal 100% Verdana,Helvetica,Arial,sans-serif,serif,monospace;background-color:#4a637d;}
+a:visited{color:#2b425a;font:normal 100% Verdana,Helvetica,Arial,sans-serif,serif,monospace;}
+div,span,p,li{color:#ffffff;font:normal 100% Verdana,Helvetica,Arial,sans-serif,serif,monospace;}
+p,li{line-height:150%;}
+div{padding:1em;}
+h1,h2,h3{color:#8f533d;font:normal 100% Verdana,Helvetica,Arial,sans-serif,serif,monospace;font-weight:normal;}
+h4,h5,h6{color:#ffffff;font:normal 100% Verdana,Helvetica,Arial,sans-serif,serif,monospace;font-weight:bold;}
+h1{font-size:120%;}
+h2{font-size:110%;}
+h3{font-size:100%;}
+h4{font-size:110%;}
+h5{font-size:105%;}
+h6{font-size:100%;}

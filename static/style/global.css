@@ -1,0 +1,33 @@
+html,body{background-color:#101010;margin:0;padding:0;}
+a{color:#4a637d;font:normal 100% Verdana,Helvetica,Arial,sans-serif,serif,monospace;padding:2px;position:relative;}
+a[href^='http']{padding-right:0.6em;}
+a[href^='http']:after,a[href^='http']:visited:after{content:'';border:0.3em solid #4a637d;border-left:0.3em solid transparent;border-bottom:0.3em solid transparent;position:absolute;right:0;top:0;width:0em;height:0em;}
+a[href^='http']:hover:after,a[href^='http']:active:after{content:'';border:0.3em solid #2b425a;border-left:0.3em solid transparent;border-bottom:0.3em solid transparent;position:absolute;right:0;top:0;width:0em;height:0em;}
+a:hover,a:active{color:#2b425a;font:normal 100% Verdana,Helvetica,Arial,sans-serif,serif,monospace;background-color:#4a637d;}
+a:visited{color:#2b425a;font:normal 100% Verdana,Helvetica,Arial,sans-serif,serif,monospace;}
+div,span,p,li{color:#ffffff;font:normal 100% Verdana,Helvetica,Arial,sans-serif,serif,monospace;}
+p,li{line-height:150%;}
+div{padding:1em;}
+h1,h2,h3{color:#8f533d;font:normal 100% Verdana,Helvetica,Arial,sans-serif,serif,monospace;font-weight:normal;}
+h4,h5,h6{color:#ffffff;font:normal 100% Verdana,Helvetica,Arial,sans-serif,serif,monospace;font-weight:bold;}
+h1{font-size:120%;}
+h2{font-size:110%;}
+h3{font-size:100%;}
+h4{font-size:110%;}
+h5{font-size:105%;}
+h6{font-size:100%;}
+#header-background{background-color:#051629;margin:0;padding:1em 2em 0 2em;position:relative;z-index:1000;box-shadow:0 0 1em 0.1em black;}
+#header{background-color:#2b425a;border-top-left-radius:0.5em;border-top-right-radius:0.5em;padding-bottom:0;box-shadow:0 0 0.5em 0 black;}#header h1{color:white;margin:0;padding:0;font-size:120%;font-weight:bold;}
+#header h2{color:white;margin:0;padding:0;font-size:60%;}
+#top-nav{margin:1em -1em 0 -1em;border:0;border-top:2px solid #051629;background-color:#051629;padding:0;}#top-nav ul{margin:0;padding:0;text-align:center;}#top-nav ul li{display:inline-block;width:20%;}#top-nav ul li a,#top-nav ul li a:visited{color:#403407;background-color:#8e7b3e;margin-left:2px;display:block;text-decoration:none;font-weight:bold;}
+#top-nav ul li a[href^='http']:after,#top-nav ul li a[href^='http']:visited:after{content:'';border:0.3em solid #403407;border-left:0.3em solid transparent;border-bottom:0.3em solid transparent;position:absolute;right:0;top:0;width:0em;height:0em;}
+#top-nav ul li a:hover,#top-nav ul li a:active{color:#8e7b3e;background-color:#403407;}
+#top-nav ul li a[href^='http']:hover:after,#top-nav ul li a[href^='http']:active:after{content:'';border:0.3em solid #8e7b3e;border-left:0.3em solid transparent;border-bottom:0.3em solid transparent;position:absolute;right:0;top:0;width:0em;height:0em;}
+#top-nav ul li:first-child>a{margin-left:0;}
+#body{margin:2px 2em 2em 2em;background-color:#051629;box-shadow:0 0 0.5em 0 black;border-bottom-left-radius:1em;border-bottom-right-radius:1em;}#body .title{border-bottom:1px dotted white;color:white;font-weight:bold;}
+#body #bottom-nav{border:0;border-top:2px solid #101010;border-bottom:2px solid #101010;background-color:#101010;margin:1em -1em 0 -1em;padding:0;}#body #bottom-nav ul{margin:0;padding:0;text-align:center;}#body #bottom-nav ul li{display:inline-block;width:33.333333333333336%;}#body #bottom-nav ul li a,#body #bottom-nav ul li a:visited{color:#403407;background-color:#8e7b3e;margin-left:2px;display:block;text-decoration:none;font-weight:bold;}
+#body #bottom-nav ul li a[href^='http']:after,#body #bottom-nav ul li a[href^='http']:visited:after{content:'';border:0.3em solid #403407;border-left:0.3em solid transparent;border-bottom:0.3em solid transparent;position:absolute;right:0;top:0;width:0em;height:0em;}
+#body #bottom-nav ul li a:hover,#body #bottom-nav ul li a:active{color:#8e7b3e;background-color:#403407;}
+#body #bottom-nav ul li a[href^='http']:hover:after,#body #bottom-nav ul li a[href^='http']:active:after{content:'';border:0.3em solid #8e7b3e;border-left:0.3em solid transparent;border-bottom:0.3em solid transparent;position:absolute;right:0;top:0;width:0em;height:0em;}
+#body #bottom-nav ul li:first-child>a{margin-left:0;}
+#body #footer{background-color:#051629;margin:1em 2em 0 2em;padding:0.5em 1em 0.5em 1em;color:white;text-align:center;font-size:70%;}

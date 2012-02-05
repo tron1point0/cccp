@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="no"?>
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512" height="512">
+<clipPath id="left">
+    <rect x="-10" y="-10" width="10" height="20" />
+</clipPath>
+<clipPath id="right">
+    <rect x="0" y="-10" width="10" height="20" />
+</clipPath>
+<filter id="blur">
+    <feGaussianBlur stdDeviation="0.3" />
+</filter>
+
+<g id="logo" transform="scale(25.6,25.6) translate(10,10)" opacity="0.5" filter="url(#blur)">
+    <g clip-path="url(#left)">
+        <circle cx="0" cy="0" r="6" fill="black" />
+    </g>
+    <g clip-path="url(#right)">
+        <circle cx="0" cy="0" r="6" fill="#233864" />
+    </g>
+    <path d="M0,-9 A7,9 0 0,0 0,9 A9,9 0 0,1 -9,-0 A9,9 0 0,1 0,-9" />
+</g>
+</svg>
